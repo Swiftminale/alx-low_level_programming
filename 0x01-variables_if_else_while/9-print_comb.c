@@ -8,13 +8,15 @@
  */
 int main(void)
 {
-char low, e, q;
-e = 'e';
-q = 'q';
-for (low = 'a'; low <= 'z'; low++)
+int d;
+for (d = '0'; d <= '9'; d++)
 {
-if (low != e && low != q)
-putchar(low);
+putchar(d);
+if (d != '9')
+{
+putchar(',');
+putchar(' ');
+}
 }
 putchar('\n');
 return (0);
