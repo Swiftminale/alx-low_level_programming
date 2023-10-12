@@ -1,14 +1,17 @@
 #include "main.h"
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * print_line - a function that draws a straight line in the terminal.
+ * followed by a new line.
+ * @n: An input integer
+ * Return: Always 0
  */
-int main(void)
+void print_line(int n)
 {
-print_line(0);
-print_line(2);
-print_line(10);
-print_line(-4);
-return (0);
+int i = 0;
+if (n > 0)
+{
+for (; i < n; i++)
+_putchar('_');
+}
+_putchar('\n');
 }
