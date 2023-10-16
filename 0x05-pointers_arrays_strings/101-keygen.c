@@ -1,32 +1,47 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
 /**
-* main returns void
-* keygen: password
-* Return: always 0 (successfull)
-*/
-char generate_random_char(void)
+ * checksum - executes checksum
+ * @s: input char
+ * Return: checksum
+ */
+unsigned long checksum(char *s)
 {
-const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-int index = rand() % (sizeof(charset) - 1);
-return (charset[index]);
-}
-void generate_password(char *password, int length)
+unsigned long sum = 0;
+while (*s != 0)
 {
-for (int i = 0; i < length; i++)
-{
-password[i] = generate_random_char();
+sum += *s;
+s++;
 }
-password[length] = '\0';
+return (sum);
 }
+/**
+ * main - prints password for crakme
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
+char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQSTUVWXYZ";
+char s[33];
+unsigned long sum;
+int i, flag = 0;
 srand(time(NULL));
-int password_length = 10;
-char password[password_length + 1];
-generate_password(password, password_length);
-printf("Generated Password: %s\n", password);
+while (flag == 0)
+{
+for (i = 0; i < 33; i++)
+{
+s[i] = alpha[rand() % (sizeof(alpha) - 1)];
+}
+s[i] = '\0';
+sum = checksum(s);
+if (sum == 2772)
+{
+flag = 1;
+printf("%s", s);
+}
+}
 return (0);
 }
-
