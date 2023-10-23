@@ -1,17 +1,31 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * _strspn - a function that gets the length of a prefix substring.
+ * @s: an input string
+ * @accept: an input character with to locate into string s
+ * Return: returns pointer to c position
  */
-int main(void)
+unsigned int _strspn(char *s, char *accept)
 {
-char *s = "hello, world";
-char *f = "oleh";
-unsigned int n;
-
-n = _strspn(s, f);
-printf("%u\n", n);
-return (0);
+int count = 0, flag;
+char *start = accept;
+while (*s)
+{
+flag = 0;
+while (*accept)
+{
+if (*accept == *s)
+{
+count++;
+flag = 1;
+break;
+}
+accept++;
+}
+s++;
+accept = start;
+if (flag == 0)
+break;
+}
+return (count);
 }
