@@ -1,15 +1,17 @@
 #include "alx.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 /**
- * malloc_checked - A function that allocates memory using malloc.
- * @b: An unsigned input integer
- * Return: Apointer to allocated memory or NULL if it fails
+ * *malloc_checked - allocate memory with malloc
+ * @b: unsigned int type
+ * Return: return pointer
  */
 void *malloc_checked(unsigned int b)
 {
-void *s;
-s = malloc(b);
-if (s == NULL)
+int *ptr;
+ptr = malloc(b);
+if (ptr == NULL)
 exit(98);
-return (s);
+return (ptr);
 }
