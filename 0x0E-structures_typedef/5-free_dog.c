@@ -1,13 +1,10 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "dog.h"
+#include <stdlib.h>
 /**
- * free_dog - function with single argument
- * @d: pointer type
- *
- * Description: frees dogs
- * Return: na
- */
+  * free_dog - frees any memory allocated by dog.
+  * @d: pointer to struct
+  * Return: what does it return?
+  */
 void free_dog(dog_t *d)
 {
 if (d)
