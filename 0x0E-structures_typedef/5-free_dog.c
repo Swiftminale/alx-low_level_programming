@@ -1,19 +1,19 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
 /**
- * free_dog - frees a dog
+ * free_dog - function with single argument
+ * @d: pointer type
  *
- * @d: dog to free
- *
- * Return: void
+ * Description: frees dogs
+ * Return: na
  */
 void free_dog(dog_t *d)
 {
-if (d == 0)
-return;
-if (d->name)
-free(d->name);
-if (d->owner)
+if (d)
+{
 free(d->owner);
+free(d->name);
 free(d);
+}
 }
