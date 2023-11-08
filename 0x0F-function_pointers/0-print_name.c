@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "alx2.h"
 /**
  * print_name - prints a name.
  * @name: string to print.
