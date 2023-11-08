@@ -1,23 +1,25 @@
 #include "main.h"
 /**
- * int_index - this functions find the index of a int
-(* a blank line
- *@array: the array to find the index
- *@size: the size of the array
- *@cmp: this a function pointer.
-* Description: this function find the index of a int)?
-(* section header: the header of this function is function_pointers.h)*
-* Return: this is a void function no return
-*/
+ * int_index - iterate over an array and executes passed functions on the
+ * elements.
+ * @array: array of intergers.
+ * @size: size of array.
+ * @cmp: is the fuction to execute on the array.
+ *
+ * Return: Index (int)
+ */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-int i;
-if (size <= 0 || array == NULL || cmp == NULL)
+int index;
+index = size;
+if (size <= 0)
 return (-1);
-for (i = 0; i < size; i++)
+if (!array || !cmp)
+return (-1);
+while (size--)
 {
-if (cmp(*(array + i)))
-return (i);
+if (cmp(array[index - size]))
+return (index - size);
 }
 return (-1);
 }
