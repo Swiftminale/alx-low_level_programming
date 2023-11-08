@@ -1,14 +1,13 @@
-#include <stdlib.h>
 #include "alx.h"
 /**
- * print_name - a function that prints a name.
- * @name: pointer to name to print
- * @f: function to print name
- * Return: Nothing
- */
-void print_name(char *name, void (*f)(char *name))
+  * print_name - Prints a name
+  * @name: The name to prints
+  * @f: Pointer to function
+  *
+  * Return: Nothing
+  */
+void print_name(char *name, void (*f)(char *))
 {
-if (name == NULL || f == NULL)
-return;
+if (name != NULL && f != NULL)
 f(name);
 }
