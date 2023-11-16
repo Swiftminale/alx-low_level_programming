@@ -7,7 +7,6 @@
  * @str: Const char pointer for data to be added
  * Return: List with new node for list_t list, NULL if failed
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
 unsigned int i;
@@ -19,6 +18,7 @@ return (NULL);
 if (new == NULL)
 return (NULL);
 for (i = 0; str[i]; i++)
+;
 if (*head == NULL)
 {
 *head = new;
