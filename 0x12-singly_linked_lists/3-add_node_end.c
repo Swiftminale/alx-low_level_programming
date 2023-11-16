@@ -18,7 +18,7 @@ if (str == NULL)
 return (NULL);
 if (new == NULL)
 return (NULL);
-for (i = 0; str[i]; i++);
+for (i = 0; str[i]; i++)
 if (*head == NULL)
 {
 *head = new;
