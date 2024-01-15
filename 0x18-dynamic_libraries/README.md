@@ -4,4 +4,4 @@
 - Email: Minalefetene@gmail.com
 
 
-# 0x17-doubly-linked-lists project for alx-higher-level-programing
+# 0x10-dynamic-libraries for alx Low level programing
